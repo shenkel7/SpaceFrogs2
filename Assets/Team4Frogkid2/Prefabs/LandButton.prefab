@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7245014980844814182}
   - component: {fileID: 2249005939187632906}
   m_Layer: 0
-  m_Name: Button
+  m_Name: LandButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sweats: {fileID: 6231055150883654963, guid: 19e0d4484ccb04da19a25d7e4c480f71, type: 3}
   animator: {fileID: 2249005939187632906}
+  key: 119
 --- !u!61 &7245014980844814182
 BoxCollider2D:
   m_ObjectHideFlags: 0
