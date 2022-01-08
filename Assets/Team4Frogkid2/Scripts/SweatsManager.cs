@@ -36,7 +36,6 @@ namespace FROGKID2
                         int p = buttonSelector[index];
                         buttonSelector.RemoveAt(index);
                         buttons[i].SetButtonAnim(p);
-                        Debug.Log(p);
                     }
                     else
                     {
