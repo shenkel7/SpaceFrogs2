@@ -31,8 +31,11 @@ namespace FROGKID2
         {
             if (Input.GetKeyDown(key))
             {
-                animator.SetBool("pressed", true);
-                sweats.CheckCondition(isWin);
+                bool check = sweats.CheckCondition(isWin);
+                if (check)
+                {
+                    animator.SetBool("pressed", true);
+                }
             }
         }
 

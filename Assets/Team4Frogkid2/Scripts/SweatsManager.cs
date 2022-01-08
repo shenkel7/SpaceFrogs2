@@ -14,6 +14,8 @@ namespace FROGKID2
         [SerializeField]
         private List<int> buttonSelector;
 
+        private bool isFailed = false;
+
 
         // Start is called before the first frame update
         void Start()
@@ -58,16 +60,22 @@ namespace FROGKID2
 
         }
 
-        public void CheckCondition(bool isWin)
+        public bool CheckCondition(bool isWin)
         {
-            if (isWin)
+            if (!isFailed && !MinigameManager.Instance.minigame.gameWin)
             {
-                Win();
+                if (isWin)
+                {
+                    Win();
+                }
+                else
+                {
+                    Lose();
+                }
+                return true;
             }
-            else
-            {
-                Lose();
-            }
+
+            return false;
         }
 
         void Win()
@@ -78,6 +86,7 @@ namespace FROGKID2
 
         void Lose()
         {
+            isFailed = true;
             Debug.Log("lose");
         }
     }
