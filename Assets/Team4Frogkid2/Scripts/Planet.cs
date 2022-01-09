@@ -15,6 +15,22 @@ namespace FROGKID2
         [SerializeField]
         float rateScale = 1.001f;
 
+        [SerializeField]
+        float speed = 1.001f;
+
+        [SerializeField]
+        float amount = 1.001f;
+
+
+        [SerializeField]
+        float speedShake = 20f;
+
+        [SerializeField]
+        float amountShake = 1.0f;
+
+
+        private bool shaking = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -25,6 +41,21 @@ namespace FROGKID2
         void Update()
         {
             transform.localScale *= rateScale;
+            if (shaking)
+            {
+                transform.position = new Vector3(Mathf.Sin(Time.time * speedShake) * amountShake, transform.position.y, transform.position.z);
+
+            }
+            else
+            {
+                transform.position = new Vector3(Mathf.Sin(Time.time * speed) * amount, transform.position.y, transform.position.z);
+
+            }
+        }
+
+        public void SetShake()
+        {
+            shaking = true;
         }
     }
 }

@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: Sweats
   m_EditorClassIdentifier: 
   gameTime: 0
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: 9414de2d4a1b74979a70e43c7a08e9fa, type: 3}
   volume: 1
-  sounds: []
+  sounds:
+  - soundName: button
+    clip: {fileID: 8300000, guid: 1c5b686980f6a48088a26f853b95732c, type: 3}
+    volume: 0.48
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: explosion
+    clip: {fileID: 8300000, guid: 6c695d005954c443d9f37a50f21a4000, type: 3}
+    volume: 0.34
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
   gameWin: 0

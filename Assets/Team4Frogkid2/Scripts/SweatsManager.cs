@@ -35,6 +35,9 @@ namespace FROGKID2
         [SerializeField]
         GameObject frogBodyLose = null;
 
+        [SerializeField]
+        List<Planet> planets;
+
 
         private bool isFailed = false;
 
@@ -100,6 +103,10 @@ namespace FROGKID2
                 else
                 {
                     Lose();
+                    foreach(Planet p in planets)
+                    {
+                        p.SetShake();
+                    }
                 }
                 return true;
             }
@@ -115,6 +122,7 @@ namespace FROGKID2
             frogWipe.SetActive(false);
             frogBodyWin.SetActive(true);
             frogHandWin.SetActive(true);
+            MinigameManager.Instance.PlaySound("button");
         }
 
         void Lose()
@@ -125,6 +133,7 @@ namespace FROGKID2
             frogPoint.SetActive(false);
             frogWipe.SetActive(false);
             frogBodyLose.SetActive(true);
+            MinigameManager.Instance.PlaySound("explosion");
         }
     }
 }
