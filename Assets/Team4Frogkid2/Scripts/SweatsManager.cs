@@ -38,6 +38,9 @@ namespace FROGKID2
         [SerializeField]
         List<Planet> planets;
 
+        [SerializeField]
+        ParticleSystem particleSystem;
+
 
         private bool isFailed = false;
 
@@ -53,7 +56,7 @@ namespace FROGKID2
             frogBodyWin.SetActive(false);
             frogHandWin.SetActive(false);
             frogBodyLose.SetActive(false);
-
+            particleSystem.Stop();
 
             int winId = Random.Range(0, buttons.Count);
 
@@ -133,6 +136,7 @@ namespace FROGKID2
             frogPoint.SetActive(false);
             frogWipe.SetActive(false);
             frogBodyLose.SetActive(true);
+            particleSystem.Play();
             MinigameManager.Instance.PlaySound("explosion");
         }
     }
