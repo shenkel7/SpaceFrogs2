@@ -14,6 +14,28 @@ namespace FROGKID2
         [SerializeField]
         private List<int> buttonSelector;
 
+        //frog anim
+        [SerializeField]
+        GameObject frogBody = null;
+
+        [SerializeField]
+        GameObject frogPoint = null;
+
+        [SerializeField]
+        GameObject frogWipe = null;
+
+        //win anim
+        [SerializeField]
+        GameObject frogBodyWin = null;
+
+        [SerializeField]
+        GameObject frogHandWin = null;
+
+        // lose anim
+        [SerializeField]
+        GameObject frogBodyLose = null;
+
+
         private bool isFailed = false;
 
 
@@ -22,6 +44,14 @@ namespace FROGKID2
         {
 
             MinigameManager.Instance.minigame.gameWin = false;
+            frogBody.SetActive(true);
+            frogPoint.SetActive(true);
+            frogWipe.SetActive(true);
+            frogBodyWin.SetActive(false);
+            frogHandWin.SetActive(false);
+            frogBodyLose.SetActive(false);
+
+
             int winId = Random.Range(0, buttons.Count);
 
 
@@ -79,14 +109,22 @@ namespace FROGKID2
 
         void Win()
         {
-            Debug.Log("win");
             MinigameManager.Instance.minigame.gameWin = true;
+            frogBody.SetActive(false);
+            frogPoint.SetActive(false);
+            frogWipe.SetActive(false);
+            frogBodyWin.SetActive(true);
+            frogHandWin.SetActive(true);
         }
 
         void Lose()
         {
             isFailed = true;
             Debug.Log("lose");
+            frogBody.SetActive(false);
+            frogPoint.SetActive(false);
+            frogWipe.SetActive(false);
+            frogBodyLose.SetActive(true);
         }
     }
 }

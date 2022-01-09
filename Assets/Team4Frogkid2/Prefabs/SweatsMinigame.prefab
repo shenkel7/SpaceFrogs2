@@ -47,3 +47,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  buttonSelector: 
+  frogBody: {fileID: 8775914911342410938, guid: 14212b8bada1346bdad229c752bb6bd5,
+    type: 3}
+  frogPoint: {fileID: 4279864385257560971, guid: 0f9bbd566d4da4401b698d89f226f20d,
+    type: 3}
+  frogWipe: {fileID: 5388707870101897442, guid: 26acaa01c40424aa7ac6560501206e7e,
+    type: 3}
+  frogBodyWin: {fileID: 1221251202217553512, guid: 55511d81b54c844758ac85b3b096ba64,
+    type: 3}
+  frogHandWin: {fileID: 6658221060511662975, guid: a6f45a6dc90bd44e6b4460503d5036f5,
+    type: 3}
+  frogBodyLose: {fileID: 1221251202217553512, guid: 55511d81b54c844758ac85b3b096ba64,
+    type: 3}
